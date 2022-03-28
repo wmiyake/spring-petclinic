@@ -8,6 +8,7 @@ projects:
         origin: 'https://github.com/redhat-developer-demos/spring-petclinic.git'
       checkoutFrom:
         revision: main
+
 components:
   - name: maven
     container:
@@ -29,6 +30,9 @@ components:
           name: SPRING_PROFILES_ACTIVE
         - value: 'jdbc:mysql://mysql-workspace:3306/petclinic'
           name: MYSQL_URL
+  - name: m2
+    volume:
+      size: 2Gi
   - name: mysql
     container:
       image: registry.redhat.io/rhel8/mysql-80@sha256:55c08482a20b653dab4d78fad77b5a459e04258135e19fb14efbd1072c786fd3
@@ -53,6 +57,9 @@ components:
           attributes:
             discoverable: 'true'
             public: 'false'
+  - name: mysql-storage
+    volume:
+      size: 2Gi
 
 commands:
   - id: 01build
