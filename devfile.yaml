@@ -9,15 +9,6 @@ projects:
       checkoutFrom:
         revision: main
 components:
-  - plugin: 
-      name: 'java11'
-      id: redhat/java11/latest
-  - plugin:
-      name: 'dependency-analytics'
-      id: redhat/dependency-analytics/latest
-  - plugin: 
-      name: 'vscode-openshift-connector'
-      id: redhat/vscode-openshift-connector/latest
   - name: maven
     container:
       image: 'registry.redhat.io/codeready-workspaces/plugin-java11-rhel8@sha256:641e223f5efbc32bab3461aa000e3a50a5dcca063331322158d1c959129ffd99'
@@ -101,18 +92,3 @@ commands:
       commandLine: 'mvn fabric8:deploy -Popenshift -DskipTests'
       component: maven
 
-  - id: debugremotejavaapplication
-    vscodeTask:
-      name: tasks
-      referenceContent: >
-          {
-           "version": "0.2.0",
-           "configurations": [
-             {
-               "type": "java",
-               "name": "Debug (Attach) - Remote",
-               "request": "attach",
-               "hostName": "localhost",
-               "port": 5005
-             }]
-           }
