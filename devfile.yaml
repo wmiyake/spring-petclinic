@@ -53,15 +53,6 @@ components:
         attributes:
           discoverable: 'true'
           public: 'false'
-  - name: java11
-    plugin:
-      id: redhat/java11/latest
-  - name: dependency-analytics
-    plugin:
-      id: redhat/dependency-analytics/latest
-  - name: vscode-openshift-connector
-    plugin:
-      id: redhat/vscode-openshift-connector/latest
 
 commands:
   - id: "01build"
@@ -101,18 +92,3 @@ commands:
       commandLine: 'mvn fabric8:deploy -Popenshift -DskipTests'
       component: maven
 
-  - id: debugremotejavaapplication
-    vscode-task:
-      name: tasks
-      referenceContent: >
-          {
-           "version": "0.2.0",
-           "configurations": [
-             {
-               "type": "java",
-               "name": "Debug (Attach) - Remote",
-               "request": "attach",
-               "hostName": "localhost",
-               "port": 5005
-             }]
-           }
