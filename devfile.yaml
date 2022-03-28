@@ -18,8 +18,8 @@ components:
         targetPort: 8080
       memoryLimit: 768Mi
       volumeMounts:
-      - name: m2
-        path: /home/jboss/.m2
+        - name: m2
+          path: /home/jboss/.m2
       env:
         - value: '-XX:MaxRAMPercentage=50.0 -XX:+UseParallelGC -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xms20m -Djava.security.egd=file:/dev/./urandom -Duser.home=/home/jboss'
           name: JAVA_OPTS
