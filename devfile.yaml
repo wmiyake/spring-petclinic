@@ -12,14 +12,14 @@ components:
   - name: maven
     container:
       image: 'registry.redhat.io/codeready-workspaces/plugin-java11-rhel8@sha256:641e223f5efbc32bab3461aa000e3a50a5dcca063331322158d1c959129ffd99'
-      mountSources: true
-      endpoints:
-      - name: 8080-tcp
-        targetPort: 8080
-      memoryLimit: 768Mi
       volumeMounts:
         - name: m2
           path: /home/jboss/.m2
+      mountSources: true
+      endpoints:
+        - name: 8080-tcp
+          targetPort: 8080
+      memoryLimit: 768Mi
       env:
         - value: '-XX:MaxRAMPercentage=50.0 -XX:+UseParallelGC -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xms20m -Djava.security.egd=file:/dev/./urandom -Duser.home=/home/jboss'
           name: JAVA_OPTS
@@ -48,11 +48,11 @@ components:
         - name: mysql-storage
           path: /var/lib/mysql
       endpoints:
-      - name: mysql-workspace
-        targetPort: 3306
-        attributes:
-          discoverable: 'true'
-          public: 'false'
+        - name: mysql-workspace
+          targetPort: 3306
+          attributes:
+            discoverable: 'true'
+            public: 'false'
 
 commands:
   - id: 01build
