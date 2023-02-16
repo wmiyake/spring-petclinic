@@ -62,9 +62,17 @@ Next, choose the Builder Image option and make sure the Java builder is selected
 
 ![Choose builder image](images/select_builder_image.png)
 
+Scroll down to the Advanced options section and select the option to change the Resource type:
+
+![Select Resource type](images/advanced_options.png)  
+
+Choose the Deployment option:  
+
+![Deployment resource type](images/resource_type_deployment.png)  
+
 Near the bottom of the page, click the `Build Configuration` link:
 
-![Build Configuration](images/advanced_options.png)
+![Build Configuration](images/advanced_options_build_configuration.png)
 
 Add the following environment variables, as displayed in the following screen capture:
 
