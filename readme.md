@@ -21,9 +21,13 @@ Click the `+Add` button and choose the `Container images` option:
 Enter the MySQL image we need, `docker.io/mysql:5.7.41`  
 
 
-![MySQL image entry](images/deploy_image_mysql.png)
+![MySQL image entry](images/deploy_image_mysql.png)  
 
-Specify the database and authentication values by adding the following four environment variables.  
+Scroll to the bottom of the page and select the option to access advanced options for a Deployment:
+
+![deployment options](images/advanced%20options%20deployment.png)
+
+Using the Environment variables section, specify the database and authentication values by adding the following four environment variables.  
 
 ![Environment variables](images/deploy_environment_variables.png)
 
