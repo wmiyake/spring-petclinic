@@ -1,4 +1,4 @@
-# Spring Pet Clinic and the Developer Sandbox for Red Hat OpenShift
+# Spring Pet Clinic e o Developer Sandbox para Red Hat OpenShift
 
 Este repositório contém uma implementação pronta para contêiner do icônico aplicativo Spring Petclinic. Especificamente, este código é útil com a tecnologia OpenShift Source-to-Image (s2i) e faz parte do material introdutório para [Developer Sandbox for Red Hat OpenShift](https://developers.redhat.com/developer-sandbox).
 
